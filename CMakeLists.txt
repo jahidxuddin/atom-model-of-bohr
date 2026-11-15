@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(shader_toys C)
+project(atom_model_of_bohr C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -24,17 +24,21 @@ FetchContent_MakeAvailable(cglm)
 
 find_package(OpenGL REQUIRED)
 
-add_executable(shader_toys
+add_executable(atom_model_of_bohr
         src/main.c
         src/shader.c
         external/glad/src/glad.c
         src/engine.c
         include/engine.h
+        src/primitives.c
+        include/primitives.h
+        src/atom.c
+        include/atom.h
 )
 
-target_include_directories(shader_toys PRIVATE
+target_include_directories(atom_model_of_bohr PRIVATE
         include
         external/glad/include
 )
 
-target_link_libraries(shader_toys PRIVATE glfw OpenGL::GL cglm)
+target_link_libraries(atom_model_of_bohr PRIVATE glfw OpenGL::GL cglm)

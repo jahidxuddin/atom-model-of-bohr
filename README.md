@@ -1,1 +1,1 @@
-# shader-toys
+# Atom model of Bohr
